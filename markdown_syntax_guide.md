@@ -524,6 +524,171 @@ S = \pi r^2
 $$
 ```
 
+### 17.1 基本运算符
+
+常见的数学运算符可以直接写，也可以使用 LaTeX 命令：
+
+```markdown
+$a + b$
+$a - b$
+$a \times b$
+$a \div b$
+$a = b$
+$a \ne b$
+$a < b$
+$a \le b$
+$a > b$
+$a \ge b$
+```
+
+显示效果：
+
+$a + b$，$a - b$，$a \times b$，$a \div b$，$a = b$，$a \ne b$，$a \le b$，$a > b$，$a \ge b$
+
+### 17.2 上标与下标
+
+使用 `^` 表示上标，使用 `_` 表示下标。单个字符可以直接写；多个字符需要使用花括号包围：
+
+```markdown
+$x^2$
+$x^{10}$
+$a_1$
+$a_{n+1}$
+$x_i^2$
+```
+
+显示效果：
+
+$x^2$，$x^{10}$，$a_1$，$a_{n+1}$，$x_i^2$
+
+### 17.3 分数与平方根
+
+使用 `\frac{分子}{分母}` 表示分数，使用 `\sqrt{表达式}` 表示平方根：
+
+```markdown
+$\frac{a}{b}$
+$\frac{x+1}{x-1}$
+$\sqrt{x}$
+$\sqrt[3]{x}$
+```
+
+显示效果：
+
+$\frac{a}{b}$，$\frac{x+1}{x-1}$，$\sqrt{x}$，$\sqrt[3]{x}$
+
+### 17.4 希腊字母
+
+希腊字母使用反斜杠加英文名称表示。大写字母通常将名称首字母大写：
+
+```markdown
+$\alpha, \beta, \gamma, \delta$
+$\epsilon, \theta, \lambda, \mu$
+$\pi, \sigma, \phi, \omega$
+$\Delta, \Gamma, \Lambda, \Omega$
+```
+
+显示效果：
+
+$\alpha, \beta, \gamma, \delta$，$\epsilon, \theta, \lambda, \mu$，$\pi, \sigma, \phi, \omega$，$\Delta, \Gamma, \Lambda, \Omega$
+
+### 17.5 括号与绝对值
+
+普通括号可以直接使用。对于需要随公式大小自动变化的括号，可以使用 `\left` 和 `\right`：
+
+```markdown
+$(a + b)^2$
+$\left(\frac{a}{b}\right)$
+$\left[\frac{1}{2}, 1\right]$
+$|x|$
+$\left|\frac{x}{y}\right|$
+```
+
+显示效果：
+
+$(a + b)^2$，$\left(\frac{a}{b}\right)$，$\left[\frac{1}{2}, 1\right]$，$|x|$，$\left|\frac{x}{y}\right|$
+
+### 17.6 求和、连乘、积分与极限
+
+常见的大型运算符包括求和 `\sum`、连乘 `\prod`、积分 `\int` 和极限 `\lim`：
+
+```markdown
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+$$
+\prod_{i=1}^{n} i = n!
+$$
+
+$$
+\int_0^1 x^2 \, dx = \frac{1}{3}
+$$
+
+$$
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+$$
+```
+
+这里的 `_` 和 `^` 分别表示运算符的下限和上限。
+
+### 17.7 常用函数与文字
+
+数学函数建议使用 LaTeX 的命令，以避免字母被当作变量：
+
+```markdown
+$\sin x$
+$\cos x$
+$\log x$
+$\ln x$
+```
+
+如果需要在公式中写普通文字，可以使用 `\text{}`：
+
+```markdown
+$$
+f(x) = 0 \quad \text{当且仅当} \quad x = 0
+$$
+```
+
+### 17.8 向量与集合
+
+```markdown
+$\vec{a}$
+$\overrightarrow{AB}$
+$\mathbf{v}$
+$x \in A$
+$A \subseteq B$
+$A \cup B$
+$A \cap B$
+$\varnothing$
+```
+
+显示效果：
+
+$\vec{a}$，$\overrightarrow{AB}$，$\mathbf{v}$，$x \in A$，$A \subseteq B$，$A \cup B$，$A \cap B$，$\varnothing$
+
+### 17.9 矩阵
+
+使用 `matrix`、`pmatrix` 或 `bmatrix` 环境表示矩阵。每一行使用 `\\` 换行，每一列使用 `&` 分隔：
+
+```markdown
+$$
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+$$
+```
+
+### 17.10 常见注意事项
+
+- 行内公式使用一对 `$` 包围。
+- 独立公式使用一对 `$$` 包围，并单独占行。
+- 上标或下标包含多个字符时，必须使用花括号，例如 `$x^{10}$`。
+- LaTeX 命令中的反斜杠必须保留，例如 `\alpha`、`\frac`。
+- 数学公式支持情况取决于 Markdown 渲染器，GitHub、VS Code 预览和其他平台可能存在差异。
+- 如果公式显示为普通文字，先确认当前编辑器或平台是否启用了 KaTeX、MathJax 或类似的公式渲染功能。
+
 注意：数学公式并不是所有 Markdown 渲染器都支持。如果目标平台不支持，需要查看该平台的具体说明。
 
 ---
